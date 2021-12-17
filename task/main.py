@@ -1,8 +1,15 @@
+import time
+from datetime import timedelta
+max_degree = int(input())
+coefs = [int(input()) for i in range(max_degree + 1)]
+
+
+start_time = time.monotonic()
+
+
 
 def main():
-    print("start")
-    max_degree = int(input())
-    coefs = [int(input()) for i in range(max_degree + 1)]
+    print("------start------")
     final_string = ""
     count = 0
     for coef in coefs:
@@ -26,6 +33,7 @@ def main():
             else:
                 final_string += " - " + degree_counter(max_degree, count, False)
         count += 1
+
     if final_string == "":
         print("0")
     else:
@@ -33,7 +41,6 @@ def main():
 
 
 def degree_counter(degree, cnt, condition: bool) -> str:
-    result = ""
     if degree - cnt == 0:
         return ""
     if condition:
@@ -50,3 +57,6 @@ def degree_counter(degree, cnt, condition: bool) -> str:
 
 if __name__ == "__main__":
     main()
+
+end_time = time.monotonic()
+print(timedelta(seconds=end_time - start_time))
