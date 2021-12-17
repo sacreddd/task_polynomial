@@ -30,7 +30,7 @@ def main():
         elif coef < 0:
             if coef != -1:
                 final_string += " - " + str(abs(coef)) + degree_counter(max_degree, count, True)
-            else:
+            elif (max_degree - count) != 0:
                 final_string += " - " + degree_counter(max_degree, count, False)
         count += 1
 
